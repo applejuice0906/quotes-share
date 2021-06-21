@@ -34,12 +34,12 @@ const QuoteForm: React.VFC<Props> = ({ onAddQuote, isLoading }) => {
         )}
 
         <div className={classes.control}>
-          <label htmlFor="author">Author</label>
-          <input type="text" id="author" ref={authorInputRef} />
+          <label htmlFor="author">👨‍💻Author</label>
+          <input required type="text" id="author" ref={authorInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor="text">Text</label>
-          <textarea id="text" rows={5} ref={textInputRef}></textarea>
+          <label htmlFor="text">✏️Text</label>
+          <textarea required id="text" rows={5} ref={textInputRef}></textarea>
         </div>
         <div className={classes.actions}>
           <button className="btn">Add Quote</button>

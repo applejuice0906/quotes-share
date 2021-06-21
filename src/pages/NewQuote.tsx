@@ -1,8 +1,12 @@
+import { useHistory } from "react-router-dom";
+
 import QuoteForm from "../components/quotes/QuoteForm";
 
 const NewQuote: React.VFC = () => {
+  const history = useHistory();
+
   const handleAddQuote = (quoteData: { author: string; text: string }) => {
-    console.log(quoteData);
+    history.push("/quotes");
   };
 
   return (
