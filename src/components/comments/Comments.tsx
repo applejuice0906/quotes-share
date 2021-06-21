@@ -19,7 +19,6 @@ const Comments: React.VFC = () => {
         </button>
       )}
       {isAddingComment && <NewComment />}
-      <p>Comments go in here...</p>
     </section>
   );
 };

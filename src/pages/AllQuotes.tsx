@@ -1,18 +1,17 @@
 import QuoteList from "../components/quotes/QuoteList";
 
-const DUMMY_QUOTES = [
-  { id: "q1", author: "Max", text: "Learning React is fun!" },
-  {
-    id: "q2",
-    author: "Thomas",
-    text: "Learning something is great!",
-  },
-];
+type Props = {
+  quotes: {
+    id: string;
+    author: string;
+    text: string;
+  }[];
+};
 
-const AllQuotes: React.VFC = () => {
+const AllQuotes: React.VFC<Props> = ({ quotes }) => {
   return (
     <div>
-      <QuoteList quotes={DUMMY_QUOTES} />
+      <QuoteList quotes={quotes} />
     </div>
   );
 };

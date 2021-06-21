@@ -32,7 +32,11 @@ const QuoteList: React.VFC<Props> = ({ quotes }) => {
   const sortedQuotes = sortQuotes(quotes, isAscending);
 
   const handleSorting = () => {
-    history.push("/quotes?sort=" + (isAscending ? "desc" : "asc"));
+    history.push({
+      pathname: location.pathname,
+      search: `?sort=${isAscending ? "desc" : "asc"}`,
+    });
+    // history.push("/quotes?sort=" + (isAscending ? "desc" : "asc"));
   };
 
   return (

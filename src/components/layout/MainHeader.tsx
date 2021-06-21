@@ -9,7 +9,7 @@ const MainHeader: React.VFC = () => {
       <nav>
         <ul>
           <li>
-            <NavLink activeClassName={classes.active} to="/quotes">
+            <NavLink activeClassName={classes.active} to="/quotes" exact>
               All Quotes
             </NavLink>
           </li>

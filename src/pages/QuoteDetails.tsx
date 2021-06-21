@@ -1,35 +1,35 @@
-import { Route, useParams, Link } from "react-router-dom";
+import { Route, useParams, Link, useRouteMatch } from "react-router-dom";
 
 import Comments from "../components/comments/Comments";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 
-const DUMMY_QUOTES = [
-  { id: "q1", author: "Max", text: "Learning React is fun!" },
-  {
-    id: "q2",
-    author: "Thomas",
-    text: "Learning something is great!",
-  },
-];
+type Props = {
+  quotes: {
+    id: string;
+    author: string;
+    text: string;
+  }[];
+};
 
-const QuoteDetails: React.VFC = () => {
+const QuoteDetails: React.VFC<Props> = ({ quotes }) => {
   const { quoteId } = useParams<{ quoteId?: string }>();
+  const match = useRouteMatch();
 
-  const quote = DUMMY_QUOTES.find((quote) => quote.id === quoteId);
+  const quote = quotes.find((quote) => quote.id === quoteId);
 
   if (!quote) return <h1 className="centered">No quote found... 🐣</h1>;
 
   return (
     <>
       <HighlightedQuote text={quote!.text} author={quote!.author} />
-      <Route exact path="/quotes/:quoteId">
+      <Route exact path={match.path}>
         <div className="centered">
-          <Link to={`/quotes/${quoteId}/comments`} className="btn--flat">
+          <Link to={`${match.url}/comments`} className="btn--flat">
             Load Comments 💬
           </Link>
         </div>
       </Route>
-      <Route path={`/quotes/${quoteId}/comments`} component={Comments} />
+      <Route path={`${match.path}/comments`} component={Comments} />
     </>
   );
 };
