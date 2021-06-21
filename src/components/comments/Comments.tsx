@@ -12,14 +12,14 @@ const Comments: React.VFC = () => {
 
   return (
     <section className={classes.comments}>
-      <h2>User Comments</h2>
+      <h2>All Comments ☘️</h2>
       {!isAddingComment && (
-        <button className="btn" onClick={startAddCommentHandler}>
+        <button className="btn--flat" onClick={startAddCommentHandler}>
           Add a Comment
         </button>
       )}
       {isAddingComment && <NewComment />}
-      <p>Comments...</p>
+      <p>Comments go in here...</p>
     </section>
   );
 };

@@ -3,13 +3,16 @@
   color: white;
 }
 
+.comments h2 {
+  margin-bottom: 0.6rem;
+}
+
 .comments > button {
   padding: 0.3rem 0.6rem;
   border: 1px solid white;
   border-radius: 8px;
   color: white;
   background: transparent;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  box-shadow: 0 2px 2px rgba(10, 10, 10, 0.3);
 }

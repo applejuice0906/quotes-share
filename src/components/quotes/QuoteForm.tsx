@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { Prompt } from "react-router-dom";
 
 import Card from "../UI/Card";
 import Loading from "../UI/Loading";
@@ -10,6 +11,7 @@ type Props = {
 };
 
 const QuoteForm: React.VFC<Props> = ({ onAddQuote, isLoading }) => {
+  const [isEntering, setIsEntering] = useState(false);
   const authorInputRef = useRef<HTMLInputElement>(null);
   const textInputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -25,27 +27,39 @@ const QuoteForm: React.VFC<Props> = ({ onAddQuote, isLoading }) => {
   }
 
   return (
-    <Card>
-      <form className={classes.form} onSubmit={submitFormHandler}>
-        {isLoading && (
-          <div className={classes.loading}>
-            <Loading />
-          </div>
-        )}
+    <>
+      <Prompt
+        when={isEntering}
+        message="Are you sure you want to leave the page?"
+      />
+      <Card>
+        <form
+          onFocus={() => setIsEntering(true)}
+          className={classes.form}
+          onSubmit={submitFormHandler}
+        >
+          {isLoading && (
+            <div className={classes.loading}>
+              <Loading />
+            </div>
+          )}
 
-        <div className={classes.control}>
-          <label htmlFor="author">👨‍💻Author</label>
-          <input required type="text" id="author" ref={authorInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="text">✏️Text</label>
-          <textarea required id="text" rows={5} ref={textInputRef}></textarea>
-        </div>
-        <div className={classes.actions}>
-          <button className="btn">Add Quote</button>
-        </div>
-      </form>
-    </Card>
+          <div className={classes.control}>
+            <label htmlFor="author">👨‍💻Author</label>
+            <input required type="text" id="author" ref={authorInputRef} />
+          </div>
+          <div className={classes.control}>
+            <label htmlFor="text">✏️Text</label>
+            <textarea required id="text" rows={5} ref={textInputRef}></textarea>
+          </div>
+          <div className={classes.actions}>
+            <button onClick={() => setIsEntering(false)} className="btn">
+              Add Quote
+            </button>
+          </div>
+        </form>
+      </Card>
+    </>
   );
 };
 

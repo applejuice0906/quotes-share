@@ -16,11 +16,16 @@ const NewComment: React.VFC = () => {
   return (
     <form className={classes.form} onSubmit={submitFormHandler}>
       <div className={classes.control} onSubmit={submitFormHandler}>
-        <label htmlFor="comment">Your Comment</label>
-        <textarea id="comment" rows={5} ref={commentTextRef}></textarea>
+        {/* <label htmlFor="comment">Your Comment</label> */}
+        <textarea
+          placeholder="Type your comment here..."
+          id="comment"
+          rows={2}
+          ref={commentTextRef}
+        ></textarea>
       </div>
       <div className={classes.actions}>
-        <button className="btn">Add Comment</button>
+        <button className="btn--flat">Add Comment</button>
       </div>
     </form>
   );

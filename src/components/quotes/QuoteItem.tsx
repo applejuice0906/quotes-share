@@ -18,7 +18,7 @@ const QuoteItem: React.VFC<Props> = ({ id, author, text }) => {
         <figcaption>{author}</figcaption>
       </figure>
       <Link className="btn" to={`/quotes/${id}`}>
-        View Fullscreen
+        See Details
       </Link>
     </li>
   );
