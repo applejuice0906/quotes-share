@@ -1,0 +1,15 @@
+.comments {
+  text-align: center;
+  color: white;
+}
+
+.comments > button {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: white;
+  background: transparent;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 2px 2px rgba(10, 10, 10, 0.3);
+}
