@@ -5,6 +5,7 @@ import classes from "./MainHeader.module.css";
 const MainHeader: React.VFC = () => {
   return (
     <header className={classes.header}>
+      <div className={classes.logo}>Great Quotes✨</div>
       <nav>
         <ul>
           <li>
@@ -14,7 +15,7 @@ const MainHeader: React.VFC = () => {
           </li>
           <li>
             <NavLink activeClassName={classes.active} to="/new-quote">
-              New Quote
+              Add Quote
             </NavLink>
           </li>
         </ul>

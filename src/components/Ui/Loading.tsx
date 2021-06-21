@@ -1,7 +1,7 @@
-import classes from "./LoadingSpinner.module.css";
+import classes from "./Loading.module.css";
 
-const LoadingSpinner: React.VFC = () => {
+const Loading: React.VFC = () => {
   return <div className={classes.spinner}></div>;
 };
 
-export default LoadingSpinner;
+export default Loading;

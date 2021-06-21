@@ -14,15 +14,57 @@ body {
   background: linear-gradient(to right, #b24592, #f15f79);
 }
 
-main {
-  margin-top: 5rem;
-  text-align: center;
-}
-
 h1,
 h2,
 h3,
 p,
 li {
   color: rgb(236, 226, 226);
+}
+
+.centered {
+  margin: 3rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.focused {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: rgba(107, 105, 231, 0.904);
+  color: white;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid teal;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #6344d4e1;
+  border-color: #4322b9e1;
+}
+
+.btn--flat {
+  cursor: pointer;
+  font: inherit;
+  color: teal;
+  border: none;
+  background-color: none;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+}
+
+.btn--flat:hover,
+.btn--flat:active {
+  background-color: teal;
+  color: white;
 }

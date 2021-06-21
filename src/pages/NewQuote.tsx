@@ -1,7 +1,13 @@
+import QuoteForm from "../components/quotes/QuoteForm";
+
 const NewQuote: React.VFC = () => {
+  const handleAddQuote = (quoteData: { author: string; text: string }) => {
+    console.log(quoteData);
+  };
+
   return (
     <div>
-      <h1>New Quote Page</h1>
+      <QuoteForm onAddQuote={handleAddQuote} />
     </div>
   );
 };
