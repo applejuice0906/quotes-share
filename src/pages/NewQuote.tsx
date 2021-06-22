@@ -3,7 +3,12 @@ import { useHistory } from "react-router-dom";
 import QuoteForm from "../components/quotes/QuoteForm";
 
 type Props = {
-  onNewQuote: (quoteData: { id: string; author: string; text: string }) => void;
+  onNewQuote: (quoteData: {
+    id: string;
+    author: string;
+    text: string;
+    comments: [];
+  }) => void;
 };
 
 const NewQuote: React.VFC<Props> = ({ onNewQuote }) => {
@@ -13,6 +18,7 @@ const NewQuote: React.VFC<Props> = ({ onNewQuote }) => {
     onNewQuote({
       id: Math.random().toString(),
       ...quoteData,
+      comments: [],
     });
     history.push("/quotes");
   };

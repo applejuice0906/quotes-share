@@ -8,6 +8,10 @@ type Props = {
     id: string;
     author: string;
     text: string;
+    comments: {
+      id: string;
+      text: string;
+    }[];
   }[];
 };
 
@@ -29,7 +33,9 @@ const QuoteDetails: React.VFC<Props> = ({ quotes }) => {
           </Link>
         </div>
       </Route>
-      <Route path={`${match.path}/comments`} component={Comments} />
+      <Route path={`${match.path}/comments`}>
+        <Comments comments={quote.comments} />
+      </Route>
     </>
   );
 };

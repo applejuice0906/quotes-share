@@ -2,12 +2,19 @@ import { useRef } from "react";
 
 import classes from "./NewComment.module.css";
 
-const NewComment: React.VFC = () => {
+type Props = {
+  onSubmitComment: (comment: { text: string; id: string }) => void;
+};
+
+const NewComment: React.VFC<Props> = ({ onSubmitComment }) => {
   const commentTextRef = useRef<HTMLTextAreaElement>(null);
 
   const submitFormHandler = (event: React.FormEvent<HTMLElement>) => {
     event.preventDefault();
-
+    onSubmitComment({
+      text: commentTextRef.current!.value,
+      id: Math.random().toString(),
+    });
     // optional: Could validate here
 
     // send comment to server

@@ -12,11 +12,23 @@ const DUMMY_QUOTES = [
     id: Math.random().toString(),
     author: "Max",
     text: "Learning React is fun!",
+    comments: [
+      {
+        id: Math.random().toString(),
+        text: "Nice Quote!",
+      },
+    ],
   },
   {
     id: Math.random().toString(),
     author: "Thomas",
     text: "Learning something is great!",
+    comments: [
+      {
+        id: Math.random().toString(),
+        text: "That's so true!",
+      },
+    ],
   },
 ];
 
